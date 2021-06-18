@@ -17,6 +17,7 @@ const Form=(props)=>{
             <input value={props.inputText} onChange={inputTextHandler} type="text" className="todo-input"/>
             <button onClick={submitTodoHandler} className="todo-button" type="submit">
                 <i className="fas fa-plus-square"></i>
+                +
             </button>
             <div className="select">
                 <select name="todos" className="filter-todo">
