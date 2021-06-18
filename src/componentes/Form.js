@@ -1,9 +1,9 @@
 import React from 'react';
-import TodoList from './todoList';
+
 
 const Form=(props)=>{
     const inputTextHandler = (e) =>{
-        console.log(e.target.value);
+
         props.setInputText(e.target.value);
     }
     const submitTodoHandler = (e) =>{
@@ -12,6 +12,10 @@ const Form=(props)=>{
         id:Math.random()*1000}]);
         props.setInputText(" ");
     }
+    const statusHandler = (e) =>{
+       props.setStatus(e.target.value);
+    }
+
     return(
         <form>
             <input value={props.inputText} onChange={inputTextHandler} type="text" className="todo-input"/>
@@ -20,7 +24,7 @@ const Form=(props)=>{
                 +
             </button>
             <div className="select">
-                <select name="todos" className="filter-todo">
+                <select onChange={statusHandler} name="todos" className="filter-todo">
                     <option value="all">All</option>
                     <option value="completed">Completed</option>
                     <option value="uncompleted">Uncompleted</option>
